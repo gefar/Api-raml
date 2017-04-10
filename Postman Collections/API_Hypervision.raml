@@ -1,0 +1,175 @@
+#%RAML 1.0
+title: API Hypervision
+version: 1.0
+baseUri: http://example.com
+baseUriParamaters: {}
+documentation:
+- title: API Hypervision
+  content: "Le portail Hypervision permet d'enrichir les événements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix"
+securitySchemes:
+  auth:
+    type: Basic Authentication
+types:
+  GetAllAstreinterequest:
+    displayName: Get all astreinteRequest
+    type: object
+    properties:
+      params:
+        required: true
+        displayName: params
+        type: Params
+      select:
+        required: true
+        displayName: select
+        type: Select
+  Params:
+    displayName: Params
+    type: object
+    properties:
+      astreinte_id:
+        required: true
+        displayName: astreinte_id
+        type: integer
+        format: int32
+  Select:
+    displayName: Select
+    type: object
+    properties:
+      astreinte_group:
+        required: true
+        displayName: astreinte_group
+        type: string
+  GetControlmJobrequest:
+    displayName: Get Controlm jobRequest
+    type: object
+    properties:
+      param:
+        required: true
+        displayName: param
+        type: Param
+  Param:
+    displayName: Param
+    type: object
+    properties:
+      data_center:
+        required: true
+        displayName: data_center
+        type: string
+/api:
+  /astreinte:
+    post:
+      displayName: Get all astreinte
+      description: 'TODO: Add Description'
+      body:
+        text/plain:
+          example:
+            value:
+              params:
+                astreinte_id: 75
+              select:
+                astreinte_group: ''
+          displayName: Body
+          type: GetAllAstreinterequest
+      securedBy:
+      - auth
+      headers:
+        Content-Type:
+          required: true
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          displayName: Authorization
+          type: string
+  /dda/newtest:
+    get:
+      displayName: DDA
+      description: 'TODO: Add Description'
+  /controlm/get_job:
+    post:
+      displayName: Get Controlm job
+      description: 'TODO: Add Description'
+      body:
+        text/plain:
+          example:
+            value:
+              param:
+                data_center: pifa1
+          displayName: Body
+          type: GetControlmJobrequest
+      securedBy:
+      - auth
+      headers:
+        Content-Type:
+          required: true
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          displayName: Authorization
+          type: string
+  /department:
+    /get_deparment:
+      get:
+        displayName: Get all departments
+        description: 'TODO: Add Description'
+        securedBy:
+        - auth
+        headers:
+          Authorization:
+            required: true
+            displayName: Authorization
+            type: string
+      /110:
+        get:
+          displayName: Get one department
+          description: 'TODO: Add Description'
+  /zabbix:
+    /hostgroup:
+      get:
+        displayName: Get all Zabbix Hostgroups
+        description: 'TODO: Add Description'
+        securedBy:
+        - auth
+        headers:
+          Authorization:
+            required: true
+            displayName: Authorization
+            type: string
+      post:
+        displayName: Create Zabbix Hostgroup
+        description: 'TODO: Add Description'
+        body:
+          multipart/form-data:
+            type: object
+            properties:
+              id_department:
+                required: true
+                displayName: id_department
+                type: string
+              hostgroup:
+                required: true
+                displayName: hostgroup
+                type: string
+        securedBy:
+        - auth
+        headers:
+          Content-Type:
+            required: true
+            displayName: Content-Type
+            type: string
+          Authorization:
+            required: true
+            displayName: Authorization
+            type: string
+      /256:
+        get:
+          displayName: Get one Zabbix Hostgroup
+          description: 'TODO: Add Description'
+          securedBy:
+          - auth
+          headers:
+            Authorization:
+              required: true
+              displayName: Authorization
+              type: string
