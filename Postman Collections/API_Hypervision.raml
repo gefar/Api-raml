@@ -5,7 +5,7 @@ baseUri: http://example.com
 baseUriParamaters: {}
 documentation:
 - title: API Hypervision
-  content: "Le portail Hypervision permet d'enrichir les ?v?nements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix"
+  content: "Le portail Hypervision permet d'enrichir les événements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix"
 securitySchemes:
   auth:
     type: Basic Authentication
@@ -75,10 +75,14 @@ types:
       headers:
         Content-Type:
           required: true
+          example:
+            value: application/json
           displayName: Content-Type
           type: string
         Authorization:
           required: true
+          example:
+            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
           displayName: Authorization
           type: string
   /dda/newtest:
@@ -102,10 +106,14 @@ types:
       headers:
         Content-Type:
           required: true
+          example:
+            value: application/json
           displayName: Content-Type
           type: string
         Authorization:
           required: true
+          example:
+            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
           displayName: Authorization
           type: string
   /department:
@@ -118,6 +126,8 @@ types:
         headers:
           Authorization:
             required: true
+            example:
+              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
             displayName: Authorization
             type: string
       /110:
@@ -134,6 +144,8 @@ types:
         headers:
           Authorization:
             required: true
+            example:
+              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
             displayName: Authorization
             type: string
       post:
@@ -145,10 +157,14 @@ types:
             properties:
               id_department:
                 required: true
+                example:
+                  value: 110
                 displayName: id_department
                 type: string
               hostgroup:
                 required: true
+                example:
+                  value: toto
                 displayName: hostgroup
                 type: string
         securedBy:
@@ -156,10 +172,14 @@ types:
         headers:
           Content-Type:
             required: true
+            example:
+              value: application/x-www-form-urlencoded
             displayName: Content-Type
             type: string
           Authorization:
             required: true
+            example:
+              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
             displayName: Authorization
             type: string
       /256:
@@ -171,5 +191,7 @@ types:
           headers:
             Authorization:
               required: true
+              example:
+                value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
               displayName: Authorization
               type: string
