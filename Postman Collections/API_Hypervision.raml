@@ -11,6 +11,12 @@ securitySchemes:
     type: Basic Authentication
 types:
   GetAllAstreinterequest:
+    example:
+      value:
+        params:
+          astreinte_id: 75
+        select:
+          astreinte_group: ''
     displayName: Get all astreinteRequest
     type: object
     properties:
@@ -40,6 +46,10 @@ types:
         displayName: astreinte_group
         type: string
   GetControlmJobrequest:
+    example:
+      value:
+        param:
+          data_center: pifa1
     displayName: Get Controlm jobRequest
     type: object
     properties:
