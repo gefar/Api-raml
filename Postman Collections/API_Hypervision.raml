@@ -1,7 +1,7 @@
 #%RAML 1.0
 title: API Hypervision
 version: 1.0
-baseUri: http://example.com
+baseUri: https://hypervision.laravel5.intranatixis.com/api
 baseUriParameters: {}
 documentation:
 - title: API Hypervision
@@ -65,143 +65,142 @@ types:
         required: true
         displayName: data_center
         type: string
-/api:
-  /astreinte:
-    post:
-      displayName: Get all astreinte
-      description: 'TODO: Add Description'
-      body:
-        text/plain:
-          example:
-            value:
-              params:
-                astreinte_id: 75
-              select:
-                astreinte_group: ''
-          displayName: Body
-          type: GetAllAstreinterequest
-      securedBy:
-      - auth
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-          displayName: Authorization
-          type: string
-  /dda/newtest:
+/astreinte:
+  post:
+    displayName: Get all astreinte
+    description: 'TODO: Add Description'
+    body:
+      text/plain:
+        example:
+          value:
+            params:
+              astreinte_id: 75
+            select:
+              astreinte_group: ''
+        displayName: Body
+        type: GetAllAstreinterequest
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+        displayName: Authorization
+        type: string
+/newtest:
+  get:
+    displayName: DDA
+    description: 'TODO: Add Description'
+/controlm/get_job:
+  post:
+    displayName: Get Controlm job
+    description: 'TODO: Add Description'
+    body:
+      text/plain:
+        example:
+          value:
+            param:
+              data_center: pifa1
+        displayName: Body
+        type: GetControlmJobrequest
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+        displayName: Authorization
+        type: string
+/department:
+  /get_deparment:
     get:
-      displayName: DDA
+      displayName: Get all departments
       description: 'TODO: Add Description'
-  /controlm/get_job:
-    post:
-      displayName: Get Controlm job
-      description: 'TODO: Add Description'
-      body:
-        text/plain:
-          example:
-            value:
-              param:
-                data_center: pifa1
-          displayName: Body
-          type: GetControlmJobrequest
       securedBy:
       - auth
       headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
         Authorization:
           required: true
           example:
             value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
           displayName: Authorization
           type: string
-  /department:
-    /get_deparment:
+    /110:
       get:
-        displayName: Get all departments
+        displayName: Get one department
         description: 'TODO: Add Description'
-        securedBy:
-        - auth
-        headers:
-          Authorization:
-            required: true
-            example:
-              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-            displayName: Authorization
-            type: string
-      /110:
-        get:
-          displayName: Get one department
-          description: 'TODO: Add Description'
-  /zabbix:
-    /hostgroup:
-      get:
-        displayName: Get all Zabbix Hostgroups
-        description: 'TODO: Add Description'
-        securedBy:
-        - auth
-        headers:
-          Authorization:
-            required: true
-            example:
-              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-            displayName: Authorization
-            type: string
-      post:
-        displayName: Create Zabbix Hostgroup
-        description: 'TODO: Add Description'
-        body:
-          multipart/form-data:
-            type: object
-            properties:
-              id_department:
-                required: true
-                example:
-                  value: 110
-                displayName: id_department
-                type: string
-              hostgroup:
-                required: true
-                example:
-                  value: toto
-                displayName: hostgroup
-                type: string
-        securedBy:
-        - auth
-        headers:
-          Content-Type:
-            required: true
-            example:
-              value: application/x-www-form-urlencoded
-            displayName: Content-Type
-            type: string
-          Authorization:
-            required: true
-            example:
-              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-            displayName: Authorization
-            type: string
-      /256:
-        get:
-          displayName: Get one Zabbix Hostgroup
-          description: 'TODO: Add Description'
-          securedBy:
-          - auth
-          headers:
-            Authorization:
+/zabbix:
+  /hostgroup:
+    get:
+      displayName: Get all Zabbix Hostgroups
+      description: 'TODO: Add Description'
+      securedBy:
+      - auth
+      headers:
+        Authorization:
+          required: true
+          example:
+            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+          displayName: Authorization
+          type: string
+    post:
+      displayName: Create Zabbix Hostgroup
+      description: 'TODO: Add Description'
+      body:
+        multipart/form-data:
+          type: object
+          properties:
+            id_department:
               required: true
               example:
-                value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-              displayName: Authorization
+                value: 110
+              displayName: id_department
               type: string
+            hostgroup:
+              required: true
+              example:
+                value: toto
+              displayName: hostgroup
+              type: string
+      securedBy:
+      - auth
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/x-www-form-urlencoded
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+          displayName: Authorization
+          type: string
+    /256:
+      get:
+        displayName: Get one Zabbix Hostgroup
+        description: 'TODO: Add Description'
+        securedBy:
+        - auth
+        headers:
+          Authorization:
+            required: true
+            example:
+              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+            displayName: Authorization
+            type: string
