@@ -68,7 +68,7 @@ types:
 /astreinte:
   post:
     displayName: Get all astreinte
-    description: 'TODO: Add Description'
+    description: ''
     body:
       text/plain:
         example:
@@ -97,11 +97,11 @@ types:
 /newtest:
   get:
     displayName: DDA
-    description: 'TODO: Add Description'
+    description: Export des enrichissements par outils pour intregration dans la BEM
 /controlm/get_job:
   post:
     displayName: Get Controlm job
-    description: 'TODO: Add Description'
+    description: ''
     body:
       text/plain:
         example:
@@ -127,7 +127,7 @@ types:
   /get_deparment:
     get:
       displayName: Get all departments
-      description: 'TODO: Add Description'
+      description: ''
       headers:
         Authorization:
           required: true
@@ -138,12 +138,12 @@ types:
     /110:
       get:
         displayName: Get one department
-        description: 'TODO: Add Description'
+        description: ''
 /zabbix:
   /hostgroup:
     get:
       displayName: Get all Zabbix Hostgroups
-      description: 'TODO: Add Description'
+      description: ''
       securedBy:
       - auth
       headers:
@@ -155,7 +155,7 @@ types:
           type: string
     post:
       displayName: Create Zabbix Hostgroup
-      description: 'TODO: Add Description'
+      description: ''
       body:
         multipart/form-data:
           type: object
@@ -190,7 +190,7 @@ types:
     /256:
       get:
         displayName: Get one Zabbix Hostgroup
-        description: 'TODO: Add Description'
+        description: ''
         securedBy:
         - auth
         headers:
