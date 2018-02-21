@@ -132,80 +132,78 @@ types:
           value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
         displayName: Authorization
         type: string
-/department:
-  /get_deparment:
+/department/get_deparment:
+  get:
+    displayName: Get all departments
+    description: ''
+    headers:
+      Authorization:
+        required: true
+        example:
+          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+        displayName: Authorization
+        type: string
+  /110:
     get:
-      displayName: Get all departments
+      displayName: Get one department
       description: ''
-      headers:
-        Authorization:
-          required: true
-          example:
-            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-          displayName: Authorization
-          type: string
-    /110:
-      get:
-        displayName: Get one department
-        description: ''
-/zabbix:
-  /hostgroup:
-    get:
-      displayName: Get all Zabbix Hostgroups
-      description: ''
-      securedBy:
-      - auth
-      headers:
-        Authorization:
-          required: true
-          example:
-            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-          displayName: Authorization
-          type: string
-    post:
-      displayName: Create Zabbix Hostgroup
-      description: ''
-      body:
-        multipart/form-data:
-          type: object
-          properties:
-            id_department:
-              required: true
-              example:
-                value: 110
-              displayName: id_department
-              type: string
-            hostgroup:
-              required: true
-              example:
-                value: toto
-              displayName: hostgroup
-              type: string
-      securedBy:
-      - auth
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/x-www-form-urlencoded
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-          displayName: Authorization
-          type: string
-    /256:
-      get:
-        displayName: Get one Zabbix Hostgroup
-        description: ''
-        securedBy:
-        - auth
-        headers:
-          Authorization:
+/zabbix/hostgroup:
+  get:
+    displayName: Get all Zabbix Hostgroups
+    description: ''
+    securedBy:
+    - auth
+    headers:
+      Authorization:
+        required: true
+        example:
+          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+        displayName: Authorization
+        type: string
+  post:
+    displayName: Create Zabbix Hostgroup
+    description: ''
+    body:
+      multipart/form-data:
+        type: object
+        properties:
+          id_department:
             required: true
             example:
-              value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-            displayName: Authorization
+              value: 110
+            displayName: id_department
             type: string
+          hostgroup:
+            required: true
+            example:
+              value: toto
+            displayName: hostgroup
+            type: string
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/x-www-form-urlencoded
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+        displayName: Authorization
+        type: string
+  /256:
+    get:
+      displayName: Get one Zabbix Hostgroup
+      description: ''
+      securedBy:
+      - auth
+      headers:
+        Authorization:
+          required: true
+          example:
+            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
+          displayName: Authorization
+          type: string
