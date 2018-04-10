@@ -97,16 +97,12 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
-      Authorization:
-        required: true
-        example:
-          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-        displayName: Authorization
-        type: string
 /newtest:
   get:
     displayName: DDA
     description: Export des enrichissements par outils pour intregration dans la BEM
+    securedBy:
+    - auth
 /controlm/get_job:
   post:
     displayName: Get Controlm job
@@ -119,6 +115,8 @@ types:
               data_center: pifa1
         displayName: Body
         type: GetControlmJobrequest
+    securedBy:
+    - auth
     headers:
       Content-Type:
         required: true
@@ -126,40 +124,24 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
-      Authorization:
-        required: true
-        example:
-          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-        displayName: Authorization
-        type: string
 /department/get_deparment:
   get:
     displayName: Get all departments
     description: 'TODO: Add Description'
-    headers:
-      Authorization:
-        required: true
-        example:
-          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-        displayName: Authorization
-        type: string
+    securedBy:
+    - auth
   /110:
     get:
       displayName: Get one department
       description: 'TODO: Add Description'
+      securedBy:
+      - auth
 /zabbix/hostgroup:
   get:
     displayName: Get all Zabbix Hostgroups
     description: 'TODO: Add Description'
     securedBy:
     - auth
-    headers:
-      Authorization:
-        required: true
-        example:
-          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-        displayName: Authorization
-        type: string
   post:
     displayName: Create Zabbix Hostgroup
     description: 'TODO: Add Description'
@@ -188,22 +170,9 @@ types:
           value: application/x-www-form-urlencoded
         displayName: Content-Type
         type: string
-      Authorization:
-        required: true
-        example:
-          value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-        displayName: Authorization
-        type: string
   /256:
     get:
       displayName: Get one Zabbix Hostgroup
       description: 'TODO: Add Description'
       securedBy:
       - auth
-      headers:
-        Authorization:
-          required: true
-          example:
-            value: Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2
-          displayName: Authorization
-          type: string
