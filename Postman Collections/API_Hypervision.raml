@@ -1,235 +1,199 @@
-{
-  "info": {
-    "_postman_id": "1625546-5b29e8c7-aa84-7612-8a75-a574e1958e23",
-    "name": "API Hypervision",
-    "description": "Le portail Hypervision permet d'enrichir les événements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix",
-    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Astreinte",
-      "item": [
-        {
-          "name": "Get all astreinte",
-          "_postman_id": "1625546-2119edc1-c08b-7ffa-3fe0-768e2d6e3122",
-          "request": {
-            "auth": {
-              "type": "basic",
-              "basic": {
-                "username": "ipv77appapi_read",
-                "password": "7_!@k@8Dmm666",
-                "saveHelperData": true,
-                "showPassword": false
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"params\":{\n\t\t\"astreinte_id\" :75\n\t},\n\t\"select\" :{\n\t\t\"astreinte_group\" : \"\"\n\t}\n}"
-            },
-            "url": "https://hypervision.laravel5.intranatixis.com/api/astreinte"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "1625546-dc967961-1db2-aa88-0836-6abb501f5b5a"
-    },
-    {
-      "name": "Consigne",
-      "item": [
-        {
-          "name": "DDA",
-          "_postman_id": "1625546-fef283dc-811d-16b5-0e19-3b87173f1426",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://hypervision.dev.intranatixis.com/api/dda/newtest",
-            "description": "Export des enrichissements par outils pour intregration dans la BEM"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "1625546-58d2bba5-0aba-033e-e6eb-2edfd5a2b120"
-    },
-    {
-      "name": "Controlm",
-      "item": [
-        {
-          "name": "Get Controlm job",
-          "_postman_id": "1625546-aa586eb6-2a89-8f72-9fed-b3900a839e14",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"param\" :{\n\t\t\"data_center\" : \"pifa1\"\n\t}\n}"
-            },
-            "url": "http://hypervision.laravel5.intranatixis.com/api/controlm/get_job"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "1625546-3f349064-925f-9177-c74e-8e7d74f07f5c"
-    },
-    {
-      "name": "Departement",
-      "item": [
-        {
-          "name": "Get all departments",
-          "_postman_id": "1625546-9dadca48-b801-5c10-d1bb-57378036a831",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "url": "http://hypervision.laravel5.intranatixis.com/api/department/get_deparment"
-          },
-          "response": []
-        },
-        {
-          "name": "Get one department",
-          "_postman_id": "1625546-1abb3b7a-312d-0466-277d-8094be57c04c",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "http://hypervision.laravel5.intranatixis.com/api/department/get_deparment/110"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "1625546-6d77efd8-886c-55f4-91fb-20ed1946edfc"
-    },
-    {
-      "name": "HostGroup",
-      "item": [
-        {
-          "name": "Get all Zabbix Hostgroups",
-          "_postman_id": "1625546-708f06bb-b326-a7ca-7461-0bbb307e47d7",
-          "request": {
-            "auth": {
-              "type": "basic",
-              "basic": {
-                "username": "ipv77appapi_read",
-                "password": "7_!@k@8Dmm666",
-                "saveHelperData": true,
-                "showPassword": false
-              }
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://hypervision.laravel5.intranatixis.com/api/zabbix/hostgroup"
-          },
-          "response": []
-        },
-        {
-          "name": "Get one Zabbix Hostgroup",
-          "_postman_id": "1625546-63807695-6076-7eb0-999b-59bae1c3b8a7",
-          "request": {
-            "auth": {
-              "type": "basic",
-              "basic": {
-                "username": "ipv77appapi_read",
-                "password": "7_!@k@8Dmm666",
-                "saveHelperData": true,
-                "showPassword": false
-              }
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://hypervision.laravel5.intranatixis.com/api/zabbix/hostgroup/256"
-          },
-          "response": []
-        },
-        {
-          "name": "Create Zabbix Hostgroup",
-          "_postman_id": "1625546-bb73740c-dff4-364a-fff8-e162e6b71ceb",
-          "request": {
-            "auth": {
-              "type": "basic",
-              "basic": {
-                "username": "ipv77appapi_read",
-                "password": "7_!@k@8Dmm666",
-                "saveHelperData": true,
-                "showPassword": false
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              },
-              {
-                "key": "Authorization",
-                "value": "Basic aXB2NzdhcHBhcGlfcmVhZDo3XyFAa0A4RG1tNjY2"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "disabled": false,
-                  "key": "id_department",
-                  "value": "110",
-                  "type": "text"
-                },
-                {
-                  "key": "hostgroup",
-                  "value": "toto",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "https://hypervision.laravel5.intranatixis.com/api/zabbix/hostgroup"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "1625546-0a885f5b-ce31-e8c7-4525-c53bc04b337c"
-    }
-  ]
-}
+#%RAML 1.0
+title: API Hypervision
+version: 1.0
+baseUri: https://hypervision.laravel5.intranatixis.com/api
+baseUriParameters: {}
+protocols:
+- HTTPS
+- HTTP
+documentation:
+- title: API Hypervision
+  content: "Le portail Hypervision permet d'enrichir les événements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix"
+securitySchemes:
+  auth:
+    type: Basic Authentication
+types:
+  GetallastreinteRequest:
+    example:
+      value:
+        params:
+          astreinte_id: 75
+        select:
+          astreinte_group: ''
+    displayName: GetallastreinteRequest
+    type: object
+    properties:
+      params:
+        required: true
+        displayName: params
+        type: Params
+      select:
+        required: true
+        displayName: select
+        type: Select
+  Params:
+    example:
+      value:
+        astreinte_id: 75
+    displayName: Params
+    type: object
+    properties:
+      astreinte_id:
+        required: true
+        displayName: astreinte_id
+        type: integer
+        format: int32
+  Select:
+    example:
+      value:
+        astreinte_group: ''
+    displayName: Select
+    type: object
+    properties:
+      astreinte_group:
+        required: true
+        displayName: astreinte_group
+        type: string
+  GetControlmjobRequest:
+    example:
+      value:
+        param:
+          data_center: pifa1
+    displayName: GetControlmjobRequest
+    type: object
+    properties:
+      param:
+        required: true
+        displayName: param
+        type: Param
+  Param:
+    example:
+      value:
+        data_center: pifa1
+    displayName: Param
+    type: object
+    properties:
+      data_center:
+        required: true
+        displayName: data_center
+        type: string
+/astreinte:
+  post:
+    displayName: Getallastreinte
+    body:
+      application/json:
+        example:
+          value:
+            params:
+              astreinte_id: 75
+            select:
+              astreinte_group: ''
+        displayName: Body
+        type: GetallastreinteRequest
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+    responses:
+      200:
+        description: Success
+/newtest:
+  get:
+    displayName: DDA
+    description: Export des enrichissements par outils pour intregration dans la BEM
+    securedBy:
+    - auth
+    responses:
+      200:
+        description: Success
+/controlm/get_job:
+  post:
+    displayName: GetControlmjob
+    body:
+      application/json:
+        example:
+          value:
+            param:
+              data_center: pifa1
+        displayName: Body
+        type: GetControlmjobRequest
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+    responses:
+      200:
+        description: Success
+/department/get_deparment:
+  get:
+    displayName: Getalldepartments
+    securedBy:
+    - auth
+    responses:
+      200:
+        description: Success
+  /110:
+    get:
+      displayName: Getonedepartment
+      securedBy:
+      - auth
+      responses:
+        200:
+          description: Success
+/zabbix/hostgroup:
+  get:
+    displayName: GetallZabbixHostgroups
+    securedBy:
+    - auth
+    responses:
+      200:
+        description: Success
+  post:
+    displayName: CreateZabbixHostgroup
+    body:
+      multipart/form-data:
+        type: object
+        properties:
+          id_department:
+            required: true
+            example:
+              value: 110
+            displayName: id_department
+            type: integer
+            format: int32
+          hostgroup:
+            required: true
+            example:
+              value: toto
+            displayName: hostgroup
+            type: string
+    securedBy:
+    - auth
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/x-www-form-urlencoded
+        displayName: Content-Type
+        type: string
+    responses:
+      200:
+        description: Success
+  /256:
+    get:
+      displayName: GetoneZabbixHostgroup
+      securedBy:
+      - auth
+      responses:
+        200:
+          description: Success
