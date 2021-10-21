@@ -1,6 +1,6 @@
 #%RAML 1.0
 title: API Hypervision
-version: 1.0
+version: '1.0'
 baseUri: https://hypervision.laravel5.intranatixis.com/api
 baseUriParameters: {}
 protocols:
@@ -100,7 +100,7 @@ types:
         displayName: Content-Type
         type: string
     responses:
-      200:
+      '200':
         description: Success
 /newtest:
   get:
@@ -109,7 +109,7 @@ types:
     securedBy:
     - auth
     responses:
-      200:
+      '200':
         description: Success
 /controlm/get_job:
   post:
@@ -132,7 +132,7 @@ types:
         displayName: Content-Type
         type: string
     responses:
-      200:
+      '200':
         description: Success
 /department/get_deparment:
   get:
@@ -140,7 +140,7 @@ types:
     securedBy:
     - auth
     responses:
-      200:
+      '200':
         description: Success
   /110:
     get:
@@ -148,16 +148,9 @@ types:
       securedBy:
       - auth
       responses:
-        200:
+        '200':
           description: Success
 /zabbix/hostgroup:
-  get:
-    displayName: GetallZabbixHostgroups
-    securedBy:
-    - auth
-    responses:
-      200:
-        description: Success
   post:
     displayName: CreateZabbixHostgroup
     body:
@@ -187,7 +180,14 @@ types:
         displayName: Content-Type
         type: string
     responses:
-      200:
+      '200':
+        description: Success
+  get:
+    displayName: GetallZabbixHostgroups
+    securedBy:
+    - auth
+    responses:
+      '200':
         description: Success
   /256:
     get:
@@ -195,5 +195,5 @@ types:
       securedBy:
       - auth
       responses:
-        200:
+        '200':
           description: Success
