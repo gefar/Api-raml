@@ -151,6 +151,13 @@ types:
         '200':
           description: Success
 /zabbix/hostgroup:
+  get:
+    displayName: GetallZabbixHostgroups
+    securedBy:
+    - auth
+    responses:
+      '200':
+        description: Success
   post:
     displayName: CreateZabbixHostgroup
     body:
@@ -179,13 +186,6 @@ types:
           value: application/x-www-form-urlencoded
         displayName: Content-Type
         type: string
-    responses:
-      '200':
-        description: Success
-  get:
-    displayName: GetallZabbixHostgroups
-    securedBy:
-    - auth
     responses:
       '200':
         description: Success
