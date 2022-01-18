@@ -10,8 +10,9 @@ documentation:
 - title: API Hypervision
   content: "Le portail Hypervision permet d'enrichir les événements qui remontent dans l'hyperviseur BEM (BMC \r\nEvent Manager) depuis les outils suivants : \r\nControlM V8, Hobbit, Newtest,Sentinel, Zabbix"
 securitySchemes:
-  auth:
+  basic:
     type: Basic Authentication
+securedBy: []
 types:
   GetallastreinteRequest:
     example:
@@ -91,7 +92,7 @@ types:
         displayName: Body
         type: GetallastreinteRequest
     securedBy:
-    - auth
+    - basic
     headers:
       Content-Type:
         required: true
@@ -108,8 +109,6 @@ types:
   get:
     displayName: DDA
     description: Export des enrichissements par outils pour intregration dans la BEM
-    securedBy:
-    - auth
     responses:
       '200':
         description: Success
@@ -124,8 +123,6 @@ types:
               data_center: pifa1
         displayName: Body
         type: GetControlmjobRequest
-    securedBy:
-    - auth
     headers:
       Content-Type:
         required: true
@@ -141,16 +138,12 @@ types:
 /department/get_deparment:
   get:
     displayName: Getalldepartments
-    securedBy:
-    - auth
     responses:
       '200':
         description: Success
   /110:
     get:
       displayName: Getonedepartment
-      securedBy:
-      - auth
       responses:
         '200':
           description: Success
@@ -158,7 +151,7 @@ types:
   get:
     displayName: GetallZabbixHostgroups
     securedBy:
-    - auth
+    - basic
     responses:
       '200':
         description: Success
@@ -182,7 +175,7 @@ types:
             displayName: hostgroup
             type: string
     securedBy:
-    - auth
+    - basic
     headers:
       Content-Type:
         required: true
@@ -199,7 +192,7 @@ types:
     get:
       displayName: GetoneZabbixHostgroup
       securedBy:
-      - auth
+      - basic
       responses:
         '200':
           description: Success
